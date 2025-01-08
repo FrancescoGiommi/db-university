@@ -34,18 +34,28 @@ FROM courses
 INNER JOIN teachers
 ON `teachers`.`id` = 44;
 
-4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui
-   sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e
-   nome
+4.  Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui
+    sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e
+    nome
 
-   SELECT \*
-   FROM students
-   INNER JOIN degrees
-   ON `students`.`degree_id` =`degrees`.`id`
-   INNER JOIN departments
-   ON `departments`.`id`;
+        SELECT
 
-5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
+    `students`.`id` `students_id`,
+    `students`.`name` `students_name`,
+    `students`.`surname` `students_surname`,
+    `degrees`.`id` `degrees_id`,
+    `degrees`.`name` `degrees_name`,
+    `degrees`.`level` `degrees_level`,
+    `departments`.`id` `departments_id`,
+    `departments`.`name` `departments_name`
+    FROM students
+    INNER JOIN degrees
+    ON `students`.`degree_id` =`degrees`.`id`
+    INNER JOIN departments
+    ON `departments`.`id`
+    ORDER BY `students`.`name` ASC, `students`.`surname` ASC;
+
+5.  Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
 
 SELECT \*
 FROM degrees
