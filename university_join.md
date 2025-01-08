@@ -37,6 +37,14 @@ ON `teachers`.`id` = 44;
    ON `departments`.`id`;
 
 5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
+
+SELECT \*
+FROM degrees
+INNER JOIN courses
+ON `courses`.`id`
+INNER JOIN teachers
+ON `teachers`.`id`;
+
 6. Selezionare tutti i docenti che insegnano nel Dipartimento di
    Matematica (54)
 7. BONUS: Selezionare per ogni studente il numero di tentativi sostenuti
