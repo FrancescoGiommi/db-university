@@ -57,7 +57,16 @@ ON `teachers`.`id` = 44;
 
 5.  Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
 
-SELECT \*
+SELECT
+`degrees`.`id` `degrees_id`,
+`degrees`.`name` `degrees_name`,
+`degrees`.`level` `degrees_level`,
+`courses`.`id` `courses_id`,
+`courses`.`name` `courses_name`,
+`courses`.`period` `courses_period`,
+`teachers`.`id` `teachers_id`,
+`teachers`.`name` `teachers_name`,
+`teachers`.`surname` `teachers_surname`
 FROM degrees
 INNER JOIN courses
 ON `courses`.`id`
